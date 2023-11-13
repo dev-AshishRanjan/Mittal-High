@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function CreatingUser() {
   const nameEl = useRef(null);
@@ -41,9 +42,13 @@ function CreatingUser() {
         aggreeEl.current.value = "";
         passEl.current.value = "";
         roomEl.current.value = "";
+        toast.success("Owner Created : " + name)
+      } else {
+        toast.error(res.message);
       }
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
   };
 

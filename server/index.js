@@ -125,15 +125,26 @@ app.post("/createowner", (req, res) => {
   const vals = ["o-" + ownerid, password, ownerid];
 
   const rest = db.createowner(values, (err, result) => {
-    if (err) console.log(err); //res.sendStatus(404);
+    if (err) {
+      console.log(err);
+      res.sendStatus(404);
+      return;
+    }
   });
   const rep = db.createownerproof(proofval, (err, result) => {
     console.log(proofval);
-    if (err) console.log(err); //res.sendStatus(404);
+    if (err) {
+      console.log(err);
+      res.sendStatus(404);
+      return;
+    }
   });
   const respn = db.createuserid(vals, (err, result) => {
-    if (err) console.log(err); //res.sendStatus(404);
-    else res.sendStatus(200);
+    if (err) {
+      console.log(err);
+      res.sendStatus(404);
+      return;
+    } else res.sendStatus(200);
   });
 });
 
