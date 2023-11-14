@@ -9,7 +9,7 @@ function Aside(props) {
           props.forHam.map((ele, index) => {
             return (
               <li key={index + 1} className="mt-6 px-8 text-left">
-                <NavLink to={`${ele.replace(/\s/g, "").toLowerCase()}`}>
+                <NavLink to={`/${props.base}/${ele.replace(/\s/g, "").toLowerCase()}`}>
                   <span className=" border-2 border-transparent hover:border-b-black">
                     {ele}
                   </span>

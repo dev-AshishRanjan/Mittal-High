@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .background{
-  background:linear-gradient(45deg, rgba(0, 183, 255, 0.424),rgba(255, 105, 180, 0.498)) ,url('../public/pngwing.com\ \(2\).png') no-repeat center center/ cover;
+  background:linear-gradient(45deg, rgba(131, 220, 255, 0.824),rgba(255, 105, 180, 0.898)) ,url('../public/pngwing.com\ \(2\).png') no-repeat center center/ cover;
   background-attachment: fixed;
 }
 input,textarea{
