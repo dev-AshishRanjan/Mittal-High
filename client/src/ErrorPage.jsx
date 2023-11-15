@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Error from "./assets/Error.svg";
+// import Error from "./assets/apartment_texture.png";
 
 function ErrorPage() {
   const nav = useNavigate();
   return (
     <div className="h-screen">
       <div className=" flex justify-center items-center">
-        <img className="w-[600px] h-[500px] " src={Error} alt="Error 404" />
+        <img className="w-[600px] h-[500px] " src={'/apartment_texture.png'} alt="Error 404" />
       </div>
       <button
         onClick={() => {
