@@ -16,6 +16,7 @@ function Particle() {
       id="tsparticles"
       init={particlesInit}
       loaded={particlesLoaded}
+      className="z-10"
       options={{
         background: {
           color: {
@@ -47,7 +48,7 @@ function Particle() {
         },
         particles: {
           color: {
-            value: "#0d47a1",
+            value: "#061025",
           },
           links: {
             color: "#0d47a1",

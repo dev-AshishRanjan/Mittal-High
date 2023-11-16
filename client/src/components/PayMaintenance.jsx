@@ -41,8 +41,8 @@ function PayMaintenance(props) {
   }, [isPaid]);
 
   return (
-    <section className="bg-white px-10 ">
-      <div className="container">
+    <section className="pr-5 px-10 py-20 w-screen">
+      <div className="container card overflow-hidden">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
             <div className="max-w-full overflow-x-auto">
@@ -83,7 +83,6 @@ function PayMaintenance(props) {
                           text-base
                           py-5
                           px-2
-                          bg-[#F3F6FF]
                           border-b border-l border-[#E8E8E8]
                           "
                     >
@@ -96,7 +95,6 @@ function PayMaintenance(props) {
                           text-base
                           py-5
                           px-2
-                          bg-[#F3F6FF]
                           border-b border-l border-[#E8E8E8]
                           "
                     >
@@ -109,7 +107,6 @@ function PayMaintenance(props) {
                           text-base
                           py-5
                           px-2
-                          bg-[#F3F6FF]
                           border-b border-l border-[#E8E8E8]
                           "
                     >
@@ -122,7 +119,6 @@ function PayMaintenance(props) {
                           text-base
                           py-5
                           px-2
-                          bg-[#F3F6FF]
                           border-b border-l border-[#E8E8E8]
                           "
                     >

@@ -14,7 +14,7 @@ function Header(props) {
   const { hamActive, hamHandler } = useContext(HamContext);
   const user = JSON.parse(localStorage.getItem("whom")).userType;
   return (
-    <nav className="w-full sticky z-50 top-0 h-14  bg-violet-700">
+    <nav className="w-full sticky z-50 top-0 h-14  bg-[#061025]">
       <div className=" flex items-center justify-between p-2">
         <div className="ml-4 flex items-center justify-between">
           <img className="h-10 w-10" src={jasmineImage} alt="Jasmine Icon" />

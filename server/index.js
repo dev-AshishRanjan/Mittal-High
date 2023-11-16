@@ -81,8 +81,11 @@ app.post("/raisingcomplaint", function (req, res) {
   const roomno = req.body.roomno;
   const values = [desc, blockno, roomno];
   const resul = db.registercomplaint(values, (err, result) => {
-    if (err) console.log(err);
-    res.send(result);
+    if (err) {
+      console.log(err);
+      res.sendStatus(401);
+      return;
+    } else res.send(result);
   });
 });
 
@@ -101,10 +104,18 @@ app.post("/createtenant", function (req, res) {
     const prof = [adhaar, tenantno];
     const vals = ["t-" + tenantno, password, tenantno];
     const resul = db.createtenantproof(prof, (err, result) => {
-      if (err) console.log(err); //res.sendStatus(404);
+      if (err) {
+        console.log(err);
+        res.sendStatus(401);
+        return;
+      }
     });
     const respn = db.createuserid(vals, (err, result) => {
-      if (err) console.log(err); //res.sendStatus(404);
+      if (err) {
+        console.log(err);
+        res.sendStatus(401);
+        return;
+      } //res.sendStatus(404);
       else res.sendStatus(200);
     });
   });
@@ -127,7 +138,7 @@ app.post("/createowner", (req, res) => {
   const rest = db.createowner(values, (err, result) => {
     if (err) {
       console.log(err);
-      res.sendStatus(404);
+      res.sendStatus(401);
       return;
     }
   });
@@ -135,14 +146,14 @@ app.post("/createowner", (req, res) => {
     console.log(proofval);
     if (err) {
       console.log(err);
-      res.sendStatus(404);
+      res.sendStatus(401);
       return;
     }
   });
   const respn = db.createuserid(vals, (err, result) => {
     if (err) {
       console.log(err);
-      res.sendStatus(404);
+      res.sendStatus(401);
       return;
     } else res.sendStatus(200);
   });

@@ -77,17 +77,17 @@ function Dashboard(props) {
       style={{
         filter: hamActive ? "blur(2px)" : "blur(0px)",
       }}
-      className="w-screen background2"
+      className="w-screen background"
     >
       <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-2 gap-5 p-10">
         {forBox &&
           forBox.map((ele, index) => {
             return (
-              <div key={index + 1} className=" p-3 border-2 border-blue-500">
-                <h1 className="font-bold text-xl text-center">
+              <div key={index + 1} className=" p-3 card pl-10">
+                <h1 className="font-bold text-2xl ">
                   {Object.values(forBox[index])}
                 </h1>
-                <p className="font-bold text-center text-sm capitalize">
+                <p className="font-bold text-sm capitalize text-gray-500">
                   {Object.keys(forBox[index])}
                 </p>
               </div>
@@ -95,13 +95,13 @@ function Dashboard(props) {
           })}
       </div>
       <div className="p-10 -mt-14">
-        <div className="border-2 border-blue-500 p-5 ">
+        <div className=" card p-5 ">
           <div>
-            <h1 className="text-center font-semibold">
+            <h1 className="text-center font-semibold text-2xl">
               Apartment Rules and Regulation
             </h1>
           </div>
-          <ol className="list-[inherit] px-6 py-2">
+          <ol className="list-[inherit] px-6 py-2 text-gray-500">
             <li>Tenant shall keep premises in good condition.</li>
             <li>Tenant shall not interfere with other tenant's premises.</li>
             <li>Tenant shall pay rent promptly on the due date. </li>

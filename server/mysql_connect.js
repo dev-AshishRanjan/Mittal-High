@@ -6,7 +6,7 @@ const con = mysql.createConnection({
   password: "4971",
   database: "dbms_project",
   insecureAuth: true,
-  protocol: 'mysql'
+  protocol: "mysql",
 });
 
 connect();
@@ -21,11 +21,8 @@ function connect() {
 //register the complaint to the block
 function registercomplaint(values, callback) {
   sql = " update block set complaints= ? where block_no = ? and room_no= ?";
-  console.log();
   con.query(sql, values, (err, results) => {
-    if (err) {
-      console.log(err);
-    }
+    console.log(results);
     callback(err, results);
   });
 }

@@ -58,7 +58,7 @@ function CreatingUser() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[550px]">
+    <div className="mx-auto w-full max-w-[550px] my-5 p-5">
       <form onSubmit={submitHandler} action="" method="POST">
         <div className="mb-5">
           <label
@@ -80,85 +80,92 @@ function CreatingUser() {
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
-        <div className="mb-5">
-          <label
-            htmlFor="owner-id"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Owner Id
-          </label>
-          <input
-            type="text"
-            ref={ownerEl}
-            name="owner-id"
-            id="owner-id"
-            value={ownerId}
-            placeholder="Owner Id"
-            onChange={() => {
-              setOwnerId(ownerEl.current.value);
-            }}
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
+        <div className="mb-5 flex gap-5 flex-wrap">
+          <div>
+            <label
+              htmlFor="owner-id"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Owner Id
+            </label>
+            <input
+              type="text"
+              ref={ownerEl}
+              name="owner-id"
+              id="owner-id"
+              value={ownerId}
+              placeholder="Owner Id"
+              onChange={() => {
+                setOwnerId(ownerEl.current.value);
+              }}
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="room-no"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Room no
+            </label>
+            <input
+              type="text"
+              ref={roomEl}
+              name="room-no"
+              id="room-no"
+              value={roomno}
+              placeholder="Room no"
+              onChange={() => {
+                setRoomno(roomEl.current.value);
+              }}
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div className="mb-5 flex gap-5 flex-wrap">
+          <div>
+            <label
+              htmlFor="owner-id"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Agreement Status
+            </label>
+            <input
+              type="text"
+              ref={aggreeEl}
+              name="aggrementStatus"
+              id="aggrementStatus"
+              value={aggrementStatus}
+              placeholder="[Yes / no]"
+              onChange={() => {
+                setAggrementStatus(aggreeEl.current.value);
+              }}
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="age"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Age
+            </label>
+            <input
+              type="number"
+              name="age"
+              ref={ageEl}
+              id="age"
+              value={age}
+              onChange={() => {
+                setAge(ageEl.current.value);
+              }}
+              placeholder="Age"
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
         </div>
         <div className="mb-5">
-          <label
-            htmlFor="room-no"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Room no
-          </label>
-          <input
-            type="text"
-            ref={roomEl}
-            name="room-no"
-            id="room-no"
-            value={roomno}
-            placeholder="Room no"
-            onChange={() => {
-              setRoomno(roomEl.current.value);
-            }}
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="owner-id"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Agreement Status
-          </label>
-          <input
-            type="text"
-            ref={aggreeEl}
-            name="aggrementStatus"
-            id="aggrementStatus"
-            value={aggrementStatus}
-            placeholder="Aggrement Status [Yes / no]"
-            onChange={() => {
-              setAggrementStatus(aggreeEl.current.value);
-            }}
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="age"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Age
-          </label>
-          <input
-            type="age"
-            name="age"
-            ref={ageEl}
-            id="age"
-            value={age}
-            onChange={() => {
-              setAge(ageEl.current.value);
-            }}
-            placeholder="Age"
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
+
         </div>
         <div className="mb-5">
           <label
@@ -208,7 +215,7 @@ function CreatingUser() {
             DOB
           </label>
           <input
-            type="text"
+            type="date"
             name="dob"
             ref={dobEl}
             value={dob}

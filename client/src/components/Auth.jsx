@@ -92,10 +92,10 @@ function Auth(props) {
   };
 
   return (
-    <div className="background">
+    <div className="backgroundAuth">
       <div className="flex items-center min-h-screen z-50">
-        <div className="container mx-auto">
-          <div className="max-w-md mx-auto my-10 bg-blue-100 p-2 rounded-md backdrop-blur-sm">
+        <div className="container mx-auto z-50">
+          <div className="max-w-md mx-auto my-10 bg-blue-100 p-2 rounded-md">
             <div className="text-center">
               <h1 className="my-3 text-3xl font-semibold text-gray-700 ">
                 Mittal High

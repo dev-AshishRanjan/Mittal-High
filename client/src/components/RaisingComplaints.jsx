@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useRef } from "react";
+import { toast } from "react-toastify";
 
 function RaisingComplaints() {
   const blockEl = useRef(null);
@@ -21,13 +22,17 @@ function RaisingComplaints() {
         descp: descp,
       });
       if (res.status === 200) {
+        toast.success("Complaint Raised");
         blockEl.current.value = "";
         roomEl.current.value = "";
         descpEl.current.value = "";
         tenantEl.current.value = "";
+      } else {
+        toast.info("Error : " + res.message);
       }
     } catch (err) {
       console.log(err);
+      toast.error("Error : " + err.message);
     }
   };
 
@@ -37,9 +42,9 @@ function RaisingComplaints() {
   };
 
   return (
-    <form onSubmit={submitHandler}>
-      <div className="min-h-screen md:px-20">
-        <div className=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
+    <form onSubmit={submitHandler} className="h-screen w-screen flex flex-wrap justify-center items-center">
+      <div className="h-screen flex flex-wrap justify-center items-center md:px-20">
+        <div className=" card overflow-hidden px-6 py-10 max-w-2xl mx-auto">
           <h1 className="text-center text-2xl font-bold text-gray-500 mb-10">
             Add Complaint
           </h1>
@@ -59,7 +64,7 @@ function RaisingComplaints() {
               }}
               placeholder="Room no"
               id="room-no"
-              className="ml-5 outline-none py-1 px-2 mb-3 text-md border-2 rounded-md"
+              className="ml-5 outline-none py-1 px-2 mb-3 text-md border-2 rounded-md bg-[#eeeff1]"
             />
             <div>
               <label
@@ -77,7 +82,7 @@ function RaisingComplaints() {
                 }}
                 placeholder="Block no"
                 id="block-no"
-                className="ml-6 outline-none py-1 px-2  text-md border-2 rounded-md"
+                className="ml-6 outline-none py-1 px-2  text-md border-2 rounded-md bg-[#eeeff1]"
               />
             </div>
             <div>
@@ -96,7 +101,7 @@ function RaisingComplaints() {
                 }}
                 placeholder="Tenant id"
                 id="tenant-no"
-                className="ml-5 outline-none py-1 my-3 px-2 text-md border-2 rounded-md"
+                className="ml-5 outline-none py-1 my-3 px-2 text-md border-2 rounded-md bg-[#eeeff1]"
               />
             </div>
           </div>
@@ -113,11 +118,11 @@ function RaisingComplaints() {
               onChange={() => {
                 setDescp(descpEl.current.value);
               }}
-              cols="30"
-              rows="10"
+              cols="20"
+              rows="3"
               value={descp}
               placeholder="Write here.."
-              className="w-full font-serif  border-2 p-4  outline-none rounded-md"
+              className="w-full font-serif  border-2 p-4  outline-none rounded-md bg-[#eeeff1]"
             ></textarea>
           </div>
           <button className="my-2 px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-white hover:bg-white hover:text-blue-500 border-2 border-blue-500 transition-all duration-200 bg-blue-500">

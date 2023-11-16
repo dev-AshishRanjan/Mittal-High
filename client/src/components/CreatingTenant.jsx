@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 function CreatingTenant() {
   const tenantEl = useRef(null);
@@ -31,6 +32,7 @@ function CreatingTenant() {
         dob: dob,
       });
       if (res.status === 200) {
+        toast.success("Tenent Created");
         tenantEl.current.value = "";
         nameEl.current.value = "";
         ageEl.current.value = "";
@@ -39,8 +41,12 @@ function CreatingTenant() {
         adhaarEl.current.value = "";
         dobEl.current.value = "";
       }
+      else {
+        toast.error("Error : " + res.message);
+      }
     } catch (error) {
       console.log(error);
+      toast.error("Error : " + error.message);
     }
   };
 
@@ -50,7 +56,7 @@ function CreatingTenant() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-[550px]">
+    <div className="mx-auto w-full max-w-[550px] my-5 p-5">
       <form onSubmit={submitHandler} action="" method="POST">
         <div className="mb-5">
           <label
@@ -72,85 +78,89 @@ function CreatingTenant() {
             className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
-        <div className="mb-5">
-          <label
-            htmlFor="tenant-no"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Tenant No.
-          </label>
-          <input
-            type="text"
-            ref={tenantEl}
-            name="tenant-no"
-            id="tenant-no"
-            value={tenantno}
-            placeholder="Tenant No."
-            onChange={() => {
-              setTenantno(tenantEl.current.value);
-            }}
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
+        <div className="mb-5 flex gap-5 flex-wrap">
+          <div>
+            <label
+              htmlFor="tenant-no"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Tenant No.
+            </label>
+            <input
+              type="text"
+              ref={tenantEl}
+              name="tenant-no"
+              id="tenant-no"
+              value={tenantno}
+              placeholder="Tenant No."
+              onChange={() => {
+                setTenantno(tenantEl.current.value);
+              }}
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="room-no"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Room no
+            </label>
+            <input
+              type="text"
+              ref={roomEl}
+              name="room-no"
+              id="room-no"
+              value={roomno}
+              placeholder="Room no"
+              onChange={() => {
+                setRoomno(roomEl.current.value);
+              }}
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
         </div>
-        <div className="mb-5">
-          <label
-            htmlFor="room-no"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Room no
-          </label>
-          <input
-            type="text"
-            ref={roomEl}
-            name="room-no"
-            id="room-no"
-            value={roomno}
-            placeholder="Room no"
-            onChange={() => {
-              setRoomno(roomEl.current.value);
-            }}
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="age"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Age
-          </label>
-          <input
-            type="age"
-            name="age"
-            ref={ageEl}
-            id="age"
-            value={age}
-            onChange={() => {
-              setAge(ageEl.current.value);
-            }}
-            placeholder="Age"
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
-        </div>
-        <div className="mb-5">
-          <label
-            htmlFor="dob"
-            className="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            DOB
-          </label>
-          <input
-            type="text"
-            name="dob"
-            ref={dobEl}
-            value={dob}
-            onChange={() => {
-              setDob(dobEl.current.value);
-            }}
-            id="dob"
-            placeholder="Enter your dob"
-            className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
+        <div className="mb-5 flex gap-5 flex-wrap">
+          <div>
+            <label
+              htmlFor="dob"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              DOB
+            </label>
+            <input
+              type="date"
+              name="dob"
+              ref={dobEl}
+              value={dob}
+              onChange={() => {
+                setDob(dobEl.current.value);
+              }}
+              id="dob"
+              placeholder="Enter your dob"
+              className="w-60 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="age"
+              className="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Age
+            </label>
+            <input
+              type="number"
+              name="age"
+              ref={ageEl}
+              id="age"
+              value={age}
+              onChange={() => {
+                setAge(ageEl.current.value);
+              }}
+              placeholder="Age"
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
         </div>
         <div className="mb-5">
           <label

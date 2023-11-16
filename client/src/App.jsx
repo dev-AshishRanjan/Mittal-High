@@ -21,19 +21,22 @@ import RoomDetailsOwner from "./components/RoomDetailsOwner";
 function App() {
   // Sidebar
   const forAdmin = [
+    "Home",
     "Tenant Details",
     "Owner Details",
     "Create owner",
     "Allotting Parking slot",
     "Complaints",
   ];
-  const forEmployee = ["Complaints"];
+  const forEmployee = ["Home", "Complaints"];
   const forTenant = [
+    "Home",
     "Raising Complaints",
     "Alloted Parking slot",
     "Pay maintenance",
   ];
   const forOwner = [
+    "Home",
     "Tenant details",
     "Complaint",
     "Create Tenant",
@@ -97,7 +100,7 @@ function App() {
           element={
             <main>
               <Header forHam={forAdmin} />
-              <section className="p-5 flex flex w-auto justify-between">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forAdmin} base={'admin'} />
                 <OwnerDetails />
               </section>
@@ -109,7 +112,7 @@ function App() {
           element={
             <main>
               <Header forHam={forAdmin} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forAdmin} base={'admin'} />
                 <TenantDetails />
               </section>
@@ -121,7 +124,7 @@ function App() {
           element={
             <main>
               <Header forHam={forAdmin} />
-              <section className="p-5 flex flex w-auto justify-between">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forAdmin} base={'admin'} />
                 <CreatingOwner />
               </section>
@@ -133,7 +136,7 @@ function App() {
           element={
             <main>
               <Header forHam={forAdmin} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forAdmin} base={'admin'} />
                 <CreatingParkingSlot />
               </section>
@@ -145,7 +148,7 @@ function App() {
           element={
             <main>
               <Header forHam={forAdmin} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forAdmin} base={'admin'} />
                 <ComplaintsViewer />
               </section>
@@ -157,7 +160,7 @@ function App() {
           element={
             <main>
               <Header forHam={forTenant} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forTenant} base={'tenant'} />
                 <RaisingComplaints />
               </section>
@@ -169,7 +172,7 @@ function App() {
           element={
             <main>
               <Header forHam={forTenant} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forTenant} base={'tenant'} />
                 <ParkingSlot />
               </section>
@@ -181,7 +184,7 @@ function App() {
           element={
             <main>
               <Header forHam={forTenant} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forTenant} base={'tenant'} />
                 <PayMaintenance />
               </section>
@@ -193,7 +196,7 @@ function App() {
           element={
             <main>
               <Header forHam={forOwner} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forOwner} base={'owner'} />
                 <RoomDetailsOwner />
               </section>
@@ -205,7 +208,7 @@ function App() {
           element={
             <main>
               <Header forHam={forOwner} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forOwner} base={'owner'} />
                 <ComplaintsViewerOwner />
               </section>
@@ -217,7 +220,7 @@ function App() {
           element={
             <main>
               <Header forHam={forOwner} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forOwner} base={'owner'} />
                 <CreatingTenant />
               </section>
@@ -229,7 +232,7 @@ function App() {
           element={
             <main>
               <Header forHam={forOwner} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forOwner} base={'owner'} />
                 <RoomDetails />
               </section>
@@ -241,7 +244,7 @@ function App() {
           element={
             <main>
               <Header forHam={forEmployee} />
-              <section className="p-5 flex">
+              <section className="dashboardSkeleton">
                 <Aside forHam={forEmployee} base={'employee'} />
                 <ComplaintsViewer />
               </section>

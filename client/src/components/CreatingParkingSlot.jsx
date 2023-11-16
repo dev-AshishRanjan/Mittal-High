@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useRef } from "react";
+import { toast } from "react-toastify";
 
 function CreatingParkingSlot() {
   const roomEl = useRef(null);
@@ -16,9 +17,11 @@ function CreatingParkingSlot() {
       if (res.status === 200) {
         roomEl.current.value = "";
         slotNoEl.current.value = "";
+        toast.success("Parking slot alloted");
       }
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
   };
 
@@ -27,13 +30,13 @@ function CreatingParkingSlot() {
     createSlot();
   };
   return (
-    <div className="flex items-center min-h-screen">
+    <div className="flex items-center  justify-center h-screen w-screen">
       <div className="container mx-auto">
-        <div className="max-w-md mx-auto my-5 bg-white p-5 rounded-md shadow-lg">
+        <div className="max-w-md mx-auto my-5 p-5  card">
           <div className="m-7">
             <form onSubmit={submitHandler} action="" method="POST" id="form">
               <div>
-                <h1 className="text-center font-boldtext-gray-600 my-2">
+                <h1 className="text-center font-bold text-gray-600 my-2">
                   Parking Slot
                 </h1>
               </div>
@@ -55,7 +58,7 @@ function CreatingParkingSlot() {
                   id="Room no"
                   placeholder="Enter your Room no"
                   required
-                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 "
+                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 bg-[#eeeff1]"
                 />
               </div>
 
@@ -77,7 +80,7 @@ function CreatingParkingSlot() {
                   id="pno"
                   placeholder="Enter Parking slot number"
                   required
-                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 "
+                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 bg-[#eeeff1]"
                 />
               </div>
 
