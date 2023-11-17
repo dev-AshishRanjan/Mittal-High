@@ -1,7 +1,38 @@
-# Apartment Management System
+![Mittal-High](https://socialify.git.ci/dev-AshishRanjan/Mittal-High/image?description=1&font=KoHo&forks=1&issues=1&language=1&owner=1&pulls=1&stargazers=1&theme=Auto)
+
+<div align="center">
+ <p>
+   
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=dev-AshishRanjan%2FMittal-High%20&countColor=%23263759&style=flat)
+![GitHub forks](https://img.shields.io/github/forks/dev-AshishRanjan/Mittal-High)
+![GitHub Repo stars](https://img.shields.io/github/stars/dev-AshishRanjan/Mittal-High)
+![GitHub contributors](https://img.shields.io/github/contributors/dev-AshishRanjan/Mittal-High)
+![GitHub last commit](https://img.shields.io/github/last-commit/dev-AshishRanjan/Mittal-High)
+  
+![GitHub repo size](https://img.shields.io/github/repo-size/dev-AshishRanjan/Mittal-High)
+
+![Github](https://img.shields.io/github/license/dev-AshishRanjan/Mittal-High)
+![GitHub issues](https://img.shields.io/github/issues/dev-AshishRanjan/Mittal-High)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/dev-AshishRanjan/Mittal-High)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/dev-AshishRanjan/Mittal-High)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/dev-AshishRanjan/Mittal-High)
+
+ </p>
+</div>
+
+<p align="center">
+  <img align="center" src="https://readme-typing-svg.herokuapp.com?color=%23${textVal}&lines=+👋🏻+Welcome+to+Mittal-High+👋🏻;👨🏻‍💻+Lets+Build+Together+👩🏻‍💻;💡+A+DBMS+Project+💡;🌐+Check+our+Website+🌐;🙏🏻+Thanks+for+Contributing+🙏🏻"
+ <img src= 'https://capsule-render.vercel.app/api?type=rect&color=gradient&height=2.5'/>
+</p>
+
+# Mittal-High
 
 We created this project as a part of Database Management System Course.
+
 # Contents
+
 - Project Description
 - Basic Structure
   - Functionalities
@@ -62,7 +93,7 @@ In this project we created a Apartment management system with user interface and
 
 <kbd><img src="assets/schema.png" alt="database-schema" width="800px"></kbd>
 
-## Screenshots of the Implementation
+<!-- ## Screenshots of the Implementation
 
 ### Admin dashboard
 
@@ -78,7 +109,7 @@ In this project we created a Apartment management system with user interface and
 
 ### Employee dashboard
 
-<kbd><img src="assets/employee.png" alt="employee-dashboard" width="800px"></kbd>
+<kbd><img src="assets/employee.png" alt="employee-dashboard" width="800px"></kbd> -->
 
 # Tech Stack
 
@@ -113,17 +144,5 @@ In this project we created a Apartment management system with user interface and
     npm run start
 
 - Now, you can use the project.
-
-# Contributors
-
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/Suryah07"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/67333204?v=4?s=100" width="100px;" alt="D K Suryah"/><br /><sub><b>D K Suryah </b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/imtharun"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/80610149?v=4?s=100" width="100px;" alt="Tharunprasth A S"/><br /><sub><b>Tharunprasath A S</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/yuvarraj-sriramkumar"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/69584827?v=4?s=100" width="100px;" alt="Yuvarraj S"/><br /><sub><b>Yuvarraj S</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/shivsrith03"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/105268528?v=4?s=100" width="100px;" alt="Shivanesh S"/><br /><sub><b>Shivanesh S</b></sub></a><br /></td>
-
-  </tr>
-</table>
 
 `Thank you!🧑‍💻`
