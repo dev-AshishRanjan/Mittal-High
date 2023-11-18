@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { HamContext } from "../HamContextProvider";
-import jasmineImage from "./../assets/jasmine.png";
+// import jasmineImage from "./../assets/jasmine.png";
 
 function Header(props) {
   const nav = useNavigate();
@@ -17,7 +17,7 @@ function Header(props) {
     <nav className="w-full sticky z-50 top-0 h-14  bg-[#061025]">
       <div className=" flex items-center justify-between p-2">
         <div className="ml-4 flex items-center justify-between">
-          <img className="h-10 w-10" src={jasmineImage} alt="Jasmine Icon" />
+          <img className="h-10 w-10" src={"/Apartment rent-bro.svg"} alt="Jasmine Icon" />
           <h1 className="text-base md:text-lg px-2 font-semibold text-white">
             Mittal High
           </h1>
@@ -56,7 +56,7 @@ function Header(props) {
           style={{
             transform: hamActive ? "translateX(0px)" : "translateX(-300px)",
           }}
-          className="md:hidden fixed left-0 top-14 transition duration-300 w-[200px] h-full rounded-r-md text-sm bg-blue-200 p-3 z-50"
+          className="md:hidden fixed left-0 top-14 transition duration-300 w-[200px] h-full rounded-r-md text-sm bg-[#061025] text-white p-3 z-50"
         >
           <ul className="font-medium">
             {props.forHam &&
@@ -69,6 +69,17 @@ function Header(props) {
                           className="transition duration-300 border-2 border-transparent hover:border-b-black"
                           onClick={logoutHandler}
                         >
+                          {ele}
+                        </span>
+                      </NavLink>
+                    </li>
+                  );
+                }
+                if (ele === "Home") {
+                  return (
+                    <li key={index + 1} className="mt-6 px-8 text-left">
+                      <NavLink to={`/${user}`} onClick={hamHandler}>
+                        <span className="transition duration-300 border-2 border-transparent hover:border-b-black">
                           {ele}
                         </span>
                       </NavLink>
