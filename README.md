@@ -93,7 +93,7 @@ In this project we created a Apartment management system with user interface and
 
 <kbd><img src="assets/schema.png" alt="database-schema" width="800px"></kbd>
 
-<!-- ## Screenshots of the Implementation
+## Screenshots of the Implementation
 
 ### Admin dashboard
 
@@ -109,7 +109,7 @@ In this project we created a Apartment management system with user interface and
 
 ### Employee dashboard
 
-<kbd><img src="assets/employee.png" alt="employee-dashboard" width="800px"></kbd> -->
+<kbd><img src="assets/employee.png" alt="employee-dashboard" width="800px"></kbd>
 
 # Tech Stack
 
