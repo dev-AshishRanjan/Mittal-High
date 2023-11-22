@@ -121,6 +121,7 @@ function createtenant(values, callback) {
     callback(err, results);
   });
 }
+
 //creating an proof for tenant
 function createtenantproof(values, callback) {
   sql = "insert into identity values(?,null,?)";
@@ -204,6 +205,74 @@ function authoriseuser(username, password, callback) {
   });
 }
 
+//tenant delete
+function deletetenant(id, callback) {
+  // First, delete referencing rows from 'rental'
+  const deleteRentalQuery = "DELETE FROM rental WHERE tenant_id=?";
+  con.query(deleteRentalQuery, id, (err, rentalResults) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      // Next, delete referencing rows from 'identity' (assuming there's a foreign key)
+      const deleteIdentityQuery = "DELETE FROM identity WHERE tenant_id=?";
+      con.query(deleteIdentityQuery, id, (err, identityResults) => {
+        if (err) {
+          callback(err, null);
+        } else {
+          // Then, delete the row from 'tenant'
+          const deleteTenantQuery = "DELETE FROM tenant WHERE tenant_id=?";
+          con.query(deleteTenantQuery, id, (err, tenantResults) => {
+            callback(err, tenantResults);
+          });
+        }
+      });
+    }
+  });
+}
+
+
+//owner delete
+function deleteowner(id, callback) {
+  // First, delete referencing rows from 'identity'
+  const deleteIdentityQuery = "DELETE FROM identity WHERE owner_id=?";
+  con.query(deleteIdentityQuery, id, (err, identityResults) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      // Then, delete the row from 'owner'
+      const deleteOwnerQuery = "DELETE FROM owner WHERE owner_id=?";
+      con.query(deleteOwnerQuery, id, (err, ownerResults) => {
+        callback(err, ownerResults);
+      });
+    }
+  });
+}
+
+//employee delete
+function deleteemployee(id, callback) {
+  // First, delete referencing rows from 'identity'
+  const deleteIdentityQuery = "DELETE FROM identity WHERE emp_id=?";
+  con.query(deleteIdentityQuery, id, (err, identityResults) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      // Then, delete the row from 'owner'
+      const deleteOwnerQuery = "DELETE FROM employee WHERE emp_id=?";
+      con.query(deleteOwnerQuery, id, (err, ownerResults) => {
+        callback(err, ownerResults);
+      });
+    }
+  });
+}
+
+function deletecomplaint(id, callback) {
+  sql = " update block set complaints=NULL  where room_no= ?";
+  con.query(sql, id, (err, results) => {
+    console.log(results);
+    callback(err, results);
+  });
+}
+
 module.exports = {
   connect,
   registercomplaint,
@@ -228,4 +297,8 @@ module.exports = {
   empsalary,
   ownerroomdetails,
   ownertenantdetails,
+  deletetenant,
+  deleteowner,
+  deleteemployee,
+  deletecomplaint,
 };

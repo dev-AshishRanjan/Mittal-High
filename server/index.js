@@ -246,3 +246,48 @@ app.post("/paymaintanance", (req, res) => {
 app.get("*", function (req, res) {
   res.send("Sorry, this is an invalid URL.");
 });
+
+app.post("/deletetenant", (req, res) => {
+  const id = req.body.userId;
+  const rest = db.deletetenant(id, (err, result) => {
+    if (err) console.log(err);
+    if (err) res.sendStatus(405);
+    else {
+      res.sendStatus(200);
+      console.log({ result });
+    }
+  });
+});
+app.post("/deleteowner", (req, res) => {
+  const id = req.body.userId;
+  const rest = db.deleteowner(id, (err, result) => {
+    if (err) console.log(err);
+    if (err) res.sendStatus(405);
+    else {
+      res.sendStatus(200);
+      console.log({ result });
+    }
+  });
+});
+app.post("/deletemployee", (req, res) => {
+  const id = req.body.userId;
+  const rest = db.deleteemployee(id, (err, result) => {
+    if (err) console.log(err);
+    if (err) res.sendStatus(405);
+    else {
+      res.sendStatus(200);
+      console.log({ result });
+    }
+  });
+});
+app.post("/deletecomplaint", (req, res) => {
+  const id = req.body.roomId;
+  const rest = db.deletecomplaint(id, (err, result) => {
+    if (err) console.log(err);
+    if (err) res.sendStatus(405);
+    else {
+      res.sendStatus(200);
+      console.log({ result });
+    }
+  });
+});
