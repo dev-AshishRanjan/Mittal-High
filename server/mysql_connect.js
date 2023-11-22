@@ -1,12 +1,12 @@
 const mysql = require("mysql");
-// const config = require("./config_sql");
+const config = require("./config_sql");
 const con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "4971",
-  database: "dbms_project",
-  insecureAuth: true,
-  protocol: "mysql",
+  host: config.host,
+  user: config.user,
+  password: config.password,
+  database: config.database,
+  insecureAuth: config.insecureAuth,
+  protocol: config.protocol,
 });
 
 connect();
