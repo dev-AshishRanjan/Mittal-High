@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { MdDeleteForever } from "react-icons/md";
+import { toast } from "react-toastify";
 
 function OwnerDetails(props) {
   const oHeader = [
@@ -9,6 +11,7 @@ function OwnerDetails(props) {
     "Room no",
     "DOB",
     "Agreement Status",
+    "Del"
   ];
   const [ownerRows, setOwnerRows] = useState([]);
 
@@ -21,12 +24,27 @@ function OwnerDetails(props) {
     }
   };
 
+  const deleteOwner = async (owner_id) => {
+    try {
+      const res = await axios.post("http://localhost:5000/deleteowner", {
+        userId: owner_id,
+      });
+      if (res.status === 200) {
+        toast.success("Deleted successfully");
+        getOwnerData();
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  };
+
   useEffect(() => {
     getOwnerData();
   }, []);
 
   return (
-    <section className="py-5 pr-5">
+    <section className="w-screen py-20 pl-5 pr-5 flex justify-center items-center">
       <div className="container card overflow-hidden">
         <div className="flex flex-wrap -mx-4">
           <div className="w-full px-4">
@@ -40,7 +58,7 @@ function OwnerDetails(props) {
                           key={index + 1}
                           className="
                               w-1/6
-                              min-w-[160px]
+                              min-w-[120px]
                               text-lg
                               font-semibold
                               text-white
@@ -133,6 +151,22 @@ function OwnerDetails(props) {
                               "
                         >
                           {ele.aggrement_status}
+                        </td>
+                        <td
+                          className="
+                              text-dark
+                              font-semibold
+                              text-xl
+                              py-5
+                              px-2
+                              text-red-500
+                              border-b border-l border-[#E8E8E8]
+                              text-center
+                              "
+                        >
+                          <MdDeleteForever className="cursor-pointer" onClick={() => {
+                            deleteOwner(ele.owner_id)
+                          }} />
                         </td>
                       </tr>
                     );

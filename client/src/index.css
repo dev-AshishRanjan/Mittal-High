@@ -3,12 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat';
 }
+
 .background {
   background: #eeeff1;
   background-attachment: fixed;
@@ -32,6 +33,11 @@ textarea {
 
 .dashboardSkeleton {
   @apply pr-5 flex w-auto justify-between;
+}
+
+a:hover {
+  transition: all 0.1s ease-in-out;
+  opacity: 0.8;
 }
 
 /* *{

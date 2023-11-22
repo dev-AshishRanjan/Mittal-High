@@ -1,6 +1,8 @@
 /* eslint-disable no-multi-str */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { MdDeleteForever } from "react-icons/md";
+import { toast } from "react-toastify";
 
 function ComplaintsViewer(props) {
   const [comps, setComps] = useState([]);
@@ -9,8 +11,24 @@ function ComplaintsViewer(props) {
     try {
       const res = await axios.get("http://localhost:5000/viewcomplaints");
       setComps(res.data);
+      console.log({ res });
     } catch (err) {
       console.log(err);
+    }
+  };
+
+  const deleteComplaints = async (room_no) => {
+    try {
+      const res = await axios.post("http://localhost:5000/deletecomplaint", {
+        roomId: room_no,
+      });
+      if (res.status === 200) {
+        toast.success("Deleted successfully");
+        getComplaints();
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
     }
   };
 
@@ -39,6 +57,11 @@ function ComplaintsViewer(props) {
                 <h1 className=" capitalize text-center text-gray-500">
                   Complaints
                 </h1>
+              </div>
+              <div className="mx-3 flex justify-center items-center text-lg text-red-500">
+                <MdDeleteForever className="cursor-pointer" onClick={() => {
+                  deleteComplaints(ele.room_no)
+                }} />
               </div>
             </div>
           )

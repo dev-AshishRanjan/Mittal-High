@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { MdDeleteForever } from "react-icons/md";
+import { toast } from "react-toastify";
 
 function TenantDetails(props) {
-  const header = ["Tenant no", "Room_no", "Name", "Age", "DOB", "Stat"];
+  const header = ["Tenant no", "Room_no", "Name", "Age", "DOB", "Stat", "Del"];
 
   const [tenantRows, setTenantRows] = useState([]);
 
@@ -14,13 +16,27 @@ function TenantDetails(props) {
       console.log(error);
     }
   };
+  const deleteTenant = async (tenant_id) => {
+    try {
+      const res = await axios.post("http://localhost:5000/deletetenant", {
+        userId: tenant_id,
+      });
+      if (res.status === 200) {
+        toast.success("Deleted successfully");
+        getTenantRows();
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  };
 
   useEffect(() => {
     getTenantRows();
   }, []);
 
   return (
-    <section className="py-20 pr-5">
+    <section className="w-screen py-20 pl-5 pr-5 flex justify-center items-center">
       <div className="container card overflow-hidden">
         <div className="flex flex-wrap">
           <div className="w-full">
@@ -34,7 +50,7 @@ function TenantDetails(props) {
                           key={index + 1}
                           className="
                               w-1/6
-                              min-w-[160px]
+                              min-w-[120px]
                               text-lg
                               font-semibold
                               text-white
@@ -127,6 +143,22 @@ function TenantDetails(props) {
                               "
                         >
                           {ele.stat}
+                        </td>
+                        <td
+                          className="
+                              text-dark
+                              font-semibold
+                              text-xl
+                              py-5
+                              px-2
+                              text-red-500
+                              border-b border-l border-[#E8E8E8]
+                              text-center
+                              "
+                        >
+                          <MdDeleteForever className="cursor-pointer" onClick={() => {
+                            deleteTenant(ele.tenant_id)
+                          }} />
                         </td>
                       </tr>
                     );
