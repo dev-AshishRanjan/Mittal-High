@@ -17,7 +17,7 @@ function OwnerDetails(props) {
 
   const getOwnerData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/ownerdetails");
+      const res = await axios.get(`${process.env.REACT_APP_SERVER}/ownerdetails`);
       setOwnerRows(res.data);
     } catch (error) {
       console.log(error);
@@ -26,37 +26,37 @@ function OwnerDetails(props) {
 
   const deleteOwner = async (owner_id) => {
     try {
-      const res = await axios.post("http://localhost:5000/deleteowner", {
+      const res = await axios.post(`${ process.env.REACT_APP_SERVER } / deleteowner`, {
         userId: owner_id,
       });
-      if (res.status === 200) {
-        toast.success("Deleted successfully");
-        getOwnerData();
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
+    if (res.status === 200) {
+      toast.success("Deleted successfully");
+      getOwnerData();
     }
-  };
+  } catch (error) {
+    console.log(error);
+    toast.error(error.message);
+  }
+};
 
-  useEffect(() => {
-    getOwnerData();
-  }, []);
+useEffect(() => {
+  getOwnerData();
+}, []);
 
-  return (
-    <section className="w-screen py-20 pl-5 pr-5 flex justify-center items-center">
-      <div className="container card overflow-hidden">
-        <div className="flex flex-wrap -mx-4">
-          <div className="w-full px-4">
-            <div className="max-w-full overflow-x-auto">
-              <table className="table-auto w-full">
-                <thead>
-                  <tr className="bg-blue-500 text-center">
-                    {oHeader.map((ele, index) => {
-                      return (
-                        <th
-                          key={index + 1}
-                          className="
+return (
+  <section className="w-screen py-20 pl-5 pr-5 flex justify-center items-center">
+    <div className="container card overflow-hidden">
+      <div className="flex flex-wrap -mx-4">
+        <div className="w-full px-4">
+          <div className="max-w-full overflow-x-auto">
+            <table className="table-auto w-full">
+              <thead>
+                <tr className="bg-blue-500 text-center">
+                  {oHeader.map((ele, index) => {
+                    return (
+                      <th
+                        key={index + 1}
+                        className="
                               w-1/6
                               min-w-[120px]
                               text-lg
@@ -68,20 +68,20 @@ function OwnerDetails(props) {
                               lg:px-4
                               border-l border-transparent
                               "
-                        >
-                          {ele}
-                        </th>
-                      );
-                    })}
-                  </tr>
-                </thead>
-                <tbody>
-                  {/* <tr> */}
-                  {ownerRows.map((ele, index) => {
-                    return (
-                      <tr key={index + 1}>
-                        <td
-                          className="
+                      >
+                        {ele}
+                      </th>
+                    );
+                  })}
+                </tr>
+              </thead>
+              <tbody>
+                {/* <tr> */}
+                {ownerRows.map((ele, index) => {
+                  return (
+                    <tr key={index + 1}>
+                      <td
+                        className="
                               text-center text-dark
                               font-medium
                               text-base
@@ -89,11 +89,11 @@ function OwnerDetails(props) {
                               px-2
                               border-b border-l border-[#E8E8E8]
                               "
-                        >
-                          {ele.owner_id}
-                        </td>
-                        <td
-                          className="
+                      >
+                        {ele.owner_id}
+                      </td>
+                      <td
+                        className="
                               text-center text-dark
                               font-medium
                               text-base
@@ -101,11 +101,11 @@ function OwnerDetails(props) {
                               px-2
                               border-b border-l border-[#E8E8E8]
                               "
-                        >
-                          {ele.name}
-                        </td>
-                        <td
-                          className="
+                      >
+                        {ele.name}
+                      </td>
+                      <td
+                        className="
                                 text-center text-dark
                                 font-medium
                                 text-base
@@ -113,11 +113,11 @@ function OwnerDetails(props) {
                                 px-2
                                 border-b border-l border-[#E8E8E8]
                                 "
-                        >
-                          {ele.room_no}
-                        </td>
-                        <td
-                          className="
+                      >
+                        {ele.room_no}
+                      </td>
+                      <td
+                        className="
                               text-center text-dark
                               font-medium
                               text-base
@@ -125,11 +125,11 @@ function OwnerDetails(props) {
                               px-2
                               border-b border-l border-[#E8E8E8]
                               "
-                        >
-                          {ele.age}
-                        </td>
-                        <td
-                          className="
+                      >
+                        {ele.age}
+                      </td>
+                      <td
+                        className="
                               text-center text-dark
                               font-medium
                               text-base
@@ -137,11 +137,11 @@ function OwnerDetails(props) {
                               px-2
                               border-b border-l border-[#E8E8E8]
                               "
-                        >
-                          {ele.dob}
-                        </td>
-                        <td
-                          className="
+                      >
+                        {ele.dob}
+                      </td>
+                      <td
+                        className="
                               text-center text-dark
                               font-medium
                               text-base
@@ -149,11 +149,11 @@ function OwnerDetails(props) {
                               px-2
                               border-b border-l border-[#E8E8E8]
                               "
-                        >
-                          {ele.aggrement_status}
-                        </td>
-                        <td
-                          className="
+                      >
+                        {ele.aggrement_status}
+                      </td>
+                      <td
+                        className="
                               text-dark
                               font-semibold
                               text-xl
@@ -163,22 +163,22 @@ function OwnerDetails(props) {
                               border-b border-l border-[#E8E8E8]
                               text-center
                               "
-                        >
-                          <MdDeleteForever className="cursor-pointer" onClick={() => {
-                            deleteOwner(ele.owner_id)
-                          }} />
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
+                      >
+                        <MdDeleteForever className="cursor-pointer" onClick={() => {
+                          deleteOwner(ele.owner_id)
+                        }} />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }
 
 export default OwnerDetails;

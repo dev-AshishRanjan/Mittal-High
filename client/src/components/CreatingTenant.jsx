@@ -22,7 +22,7 @@ function CreatingTenant() {
 
   const createTenant = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/createtenant", {
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/createtenant`, {
         name: name,
         age: age,
         roomno: roomno,

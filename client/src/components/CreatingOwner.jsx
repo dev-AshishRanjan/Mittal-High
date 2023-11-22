@@ -23,7 +23,7 @@ function CreatingUser() {
 
   const post = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/createowner", {
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/createowner`, {
         name: name,
         age: age,
         ownerId: ownerId,

@@ -15,7 +15,7 @@ function RoomDetails(props) {
 
   const getRoomDetails = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/ownertenantdetails", {
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/ownertenantdetails`, {
         userId: JSON.parse(window.localStorage.getItem("whom")).username,
       });
       setRoomRows(res.data);

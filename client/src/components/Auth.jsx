@@ -41,7 +41,7 @@ function Auth(props) {
 
   const authorize = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/auth", {
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/auth`, {
         username: userId,
         password: password,
       });

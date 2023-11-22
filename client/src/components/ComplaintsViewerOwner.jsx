@@ -7,7 +7,7 @@ function ComplaintsViewer(props) {
 
   const getComplaints = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/ownercomplaints", {
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/ownercomplaints`, {
         userId: JSON.parse(localStorage.getItem("whom")).username,
       });
       setComps(res.data);

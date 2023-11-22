@@ -11,7 +11,7 @@ function PayMaintenance(props) {
 
   const pay = async () => {
     try {
-      const res = await axios.post(`http://localhost:5000/dashboard/tenant`, {
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/dashboard/tenant`, {
         userId: JSON.parse(window.localStorage.getItem("whom")).username,
       });
       const [result] = res.data;
@@ -28,7 +28,7 @@ function PayMaintenance(props) {
 
   useEffect(() => {
     axios
-      .post("http://localhost:5000/paymaintanance", {
+      .post(`${process.env.REACT_APP_SERVER}/paymaintanance`, {
         userId: JSON.parse(localStorage.getItem("whom")).username,
         status: "Paid",
       })

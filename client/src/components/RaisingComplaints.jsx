@@ -15,7 +15,7 @@ function RaisingComplaints() {
 
   const raiseComplaint = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/raisingcomplaint", {
+      const res = await axios.post(`${process.env.REACT_APP_SERVER}/raisingcomplaint`, {
         blockno: blockno,
         roomno: roomno,
         tenantId: tenantId,
