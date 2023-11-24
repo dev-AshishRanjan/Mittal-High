@@ -102,39 +102,18 @@ function Dashboard(props) {
             </h1>
           </div>
           <ol className="list-[inherit] px-6 py-2 text-gray-500">
-            <li>Tenant shall keep premises in good condition.</li>
-            <li>Tenant shall not interfere with other tenant's premises.</li>
-            <li>Tenant shall pay rent promptly on the due date. </li>
-            <li>
-              Tenant shall not make any alterations to the premises without
-              written permission of the landlord.
-            </li>
-            <li>
-              Tenant shall keep proper liability, fire and/or other damage
-              insurance on the contents of the premises leased.
-            </li>
-            <li>
-              Tenants shall not receive a refund of the damage deposit until
-              landlord is certain that the premises are free of damages upon the
-              surrender of the premises.
-            </li>
-            <li>
-              No tenant shall interfere in any manner with any portion either of
-              the heating or lighting or other apparatus in or about the
-              building.
-            </li>
-            <li>
-              Automobiles must be kept within yellow lines of the parking lot
-              areas.
-            </li>
-            <li>
-              Sanitary napkins shall not be deposited in toilets but shall be
-              wrapped and deposited with other waste matter and refuse.
-            </li>
-            <li>
-              Tenant shall be responsible for closing of windows in his or her
-              apartment during storms.
-            </li>
+            <li>Residents are encouraged to maintain the premises with care and report any issues promptly.</li>
+            <li>Respect for neighbors' privacy and peaceful enjoyment of their space is paramount.</li>
+            <li>Rent payments are due on the specified date to ensure a harmonious living environment for all.</li>
+            <li>Any alterations to the apartment require written approval from the administration.</li>
+            <li>Residents are advised to have proper insurance coverage for personal belongings.</li>
+            <li>Damage deposits will be refunded promptly upon verifying the premises are damage-free upon departure.</li>
+            <li>Residents are expected to refrain from tampering with heating, lighting, or other building systems.</li>
+            <li>Parking is limited to designated areas outlined by yellow lines for the convenience of all residents.</li>
+            <li>Sanitary items should be disposed of properly, wrapped and placed with other waste.</li>
+            <li>Residents are responsible for securing windows during inclement weather for their safety.</li>
+            <li>Women's security is a priority, and measures are in place to ensure a safe and comfortable living environment for all.</li>
+            <li>The administration is committed to fostering a home away from home atmosphere, prioritizing the well-being and satisfaction of all residents.</li>
           </ol>
         </div>
       </div>
