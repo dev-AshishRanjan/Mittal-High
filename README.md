@@ -34,18 +34,29 @@ We created this project as a part of Database Management System Course.
 # Contents
 
 - Project Description
+- Tech Stack
 - Basic Structure
   - Functionalities
   - ER Diagram
   - Database Schema
   - Screenshots of the Interface
-- Tech Stack
 - How to Run
 - Contributors
 
 # Project Description
 
 In this project we created a Apartment management system with user interface and database support.This project is a part of our curriculum, here we solved the problem of manual entry of data in apartments by creating user interface and storing data in mysql database.
+
+# Tech Stack
+
+<img src="https://img.shields.io/badge/react-7c3aed?style=for-the-badge&logo=react&logoColor=white" alt="React"/>
+<img src="https://img.shields.io/badge/tailwindcss-7c3aed?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="TailWind CSS"/>
+<img src="https://img.shields.io/badge/express-7c3aed?style=for-the-badge&logo=express&logoColor=white" alt="Express"/>
+<img src="https://img.shields.io/badge/mysql-7c3aed?style=for-the-badge&logo=mysql&logoColor=white" alt="Mysql"/>
+
+- Frontend -  React JS, Tailwind css
+- Backend - NodeJS, ExpressJS
+- Database - MySql
 
 # Basic Structure
 
@@ -55,8 +66,11 @@ In this project we created a Apartment management system with user interface and
   - Admin can login.
   - Admin can view the tenant and owner details.
   - Admin can create owner.
+  - _Admin can delete owner._
+  - _Admin can delete tenent._
   - Admin can allot parking slot.
   - Admin can view the complaints.
+  - _Admin can delete the complaints._
   - Admin can see total Owners.
   - Admin can see total Tenants.
   - Admin can see total Employee.
@@ -110,12 +124,6 @@ In this project we created a Apartment management system with user interface and
 ### Employee dashboard
 
 <kbd><img src="assets/employee.png" alt="employee-dashboard" width="800px"></kbd>
-
-# Tech Stack
-
-- Frontend - HTML5, Tailwind css, React JS
-- Backend - NodeJS, ExpressJS
-- Database - MySql
 
 # How to Run
 
