@@ -54,7 +54,7 @@ In this project we created a Apartment management system with user interface and
 <img src="https://img.shields.io/badge/express-7c3aed?style=for-the-badge&logo=express&logoColor=white" alt="Express"/>
 <img src="https://img.shields.io/badge/mysql-7c3aed?style=for-the-badge&logo=mysql&logoColor=white" alt="Mysql"/>
 
-- Frontend -  React JS, Tailwind css
+- Frontend - React JS, Tailwind css
 - Backend - NodeJS, ExpressJS
 - Database - MySql
 
@@ -62,6 +62,9 @@ In this project we created a Apartment management system with user interface and
 
 ## Functionalities
 
+<details>
+  <summary>click to view Functionalities</summary>
+  
 - Admin
   - Admin can login.
   - Admin can view the tenant and owner details.
@@ -71,26 +74,18 @@ In this project we created a Apartment management system with user interface and
   - Admin can allot parking slot.
   - Admin can view the complaints.
   - _Admin can delete the complaints._
-  - Admin can see total Owners.
-  - Admin can see total Tenants.
-  - Admin can see total Employee.
+  - Admin can see Dashboard.
 - Owner
   - Owner can see the Tenant details of his/her owned room.
   - Owner can create Tenant.
   - Owner can see the complaints from his/her owned room.
   - Owner can see the Room Details.
-  - Owner can see Total Complaint.
-  - Owner can see Number of Employee.
+  - Owner can see Dashboard.
 - Tenant
-
   - Tenant can see the alloted parking slot.
   - Tenant can pay maintenance fee.
   - Tenant can raise complaints.
-  - Tenant can see his/her Tenant id.
-  - Tenant can see his/her Name.
-  - Tenant can see his/her Age.
-  - Tenant can see his/her DOB.
-  - Tenant can see his/her Room no.
+  - Tenant can see his/her Dashboard.
 
 - Employee
 
@@ -99,13 +94,14 @@ In this project we created a Apartment management system with user interface and
 
 - All the admins, owners, tenant, employees can login and logout.
 
+</details>
+
 ## ER Diagram
 
+<details>
+  <summary>Click to view ER diagram</summary>
 <kbd><img src="assets/er-diagram.png" width="800px"></kbd>
-
-## Database Schema
-
-<kbd><img src="assets/schema.png" alt="database-schema" width="800px"></kbd>
+</details>
 
 ## Screenshots of the Implementation
 
