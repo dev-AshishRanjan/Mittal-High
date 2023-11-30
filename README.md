@@ -33,15 +33,17 @@ We created this project as a part of Database Management System Course.
 
 # Contents
 
+<details>
+  <summary>Click to view Table of Contents</summary>
+
 - Project Description
 - Tech Stack
 - Basic Structure
   - Functionalities
   - ER Diagram
-  - Database Schema
   - Screenshots of the Interface
 - How to Run
-- Contributors
+</details>
 
 # Project Description
 
